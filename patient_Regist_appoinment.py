@@ -5,8 +5,9 @@ import sys
 patients = Queue()
 current_patient = None
 
+
 while True:
-    print ("Desktop Manager - Patient Registeration and Appointment System\n")
+    print ("Desktop Manager - Patient Registeration and Appointment System")
     print("""
         1. Press 1 to Register the patient
         2. Press 2 to Remove the Patient
@@ -27,10 +28,17 @@ while True:
         print (f"Patient {current_patient} removed after meeting the doctor.\n")
 
     elif userinput == "3":
-        print("Current Patient Queue")
-        for i in patients.queue:
-            print (i)
-
+        if not patients.empty():
+            print("Current Patient Queue: ")
+            for i in patients.queue:
+                print (i)
+        else:
+            print("No queue for now.")
+        print()
+            
     elif userinput == "4":
         print("Exited")
         sys.exit()
+    
+    else:
+        print("Invalid Input. Follow the instruction Well.\n\n")
