@@ -41,9 +41,8 @@ def show_book_list():
 def remove_book():
     remove_title = input("Enter the titble of book to remove: ")
     if remove_title in books_list:
-        remove_author = books_dict[remove_title]
         books_list.remove(remove_title)
-        author_set.remove(remove_author)
+        #author_set.remove(remove_author)
         del books_dict[remove_title]
 
         print ("Book removed successfully!")
@@ -53,7 +52,9 @@ def remove_book():
         print("Book not found!")
 
 def add_book():
-    pass
+    new_book = input("Title of new book: ")
+    books_list.append(new_book)
+
 
 
 while True:
